@@ -8,13 +8,17 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { ScooterModule } from './scooter/scooter.module';
 import { OrderModule } from './order/order.module';
 import { ProductModule } from "./product/product.module";
+import { TopCaseModule } from './top_case/top_case.module';
+
 
 @Module({
   imports: [MongooseModule.forRoot("mongodb+srv://root:root@cluster0.kpikx.mongodb.net/brumar?retryWrites=true&w=majority"),
     UserModule,
     ScooterModule,
     OrderModule,
-    ProductModule],
+    ProductModule,
+    TopCaseModule,
+  ],
   controllers: [AppController],
   providers: [AppService],
 })

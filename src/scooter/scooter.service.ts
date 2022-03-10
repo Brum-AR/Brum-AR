@@ -1,6 +1,5 @@
 import { Injectable } from '@nestjs/common';
 import { CreateScooterDto } from './dto/create-scooter.dto';
-import { UpdateScooterDto } from './dto/update-scooter.dto';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { Scooter, ScooterDocument } from './schemas/scooter.schema';
@@ -14,7 +13,7 @@ export class ScooterService {
     //const createdScooter = new this.scooterModel(createScooterDto);
     const createdScooter = new this.scooterModel(
     {
-      name: "scooter",
+      name: "scooter bleu",
       price: 3200,
       max_speed: "45 Km/h",
       cylinder: "50 cc",
