@@ -6,10 +6,11 @@ export type TopCaseDocument = TopCase & Document;
 export class TopCase {
 
   @Prop({required:true})
-  description : string[];
+  description : string;
 
   @Prop({required:true})
   price : number;
+
   @Prop()
   create_at: Date;
 }

@@ -20,6 +20,6 @@ export class Order {
   top_case : TopCase;
 
   @Prop()
-  create_at: Date;
+  created_at: Date;
 }
 export const  OrderSchema = SchemaFactory.createForClass(Order);
