@@ -1,15 +1,22 @@
 import { Injectable } from '@nestjs/common';
 import { CreateScooterDto } from './dto/create-scooter.dto';
 import { UpdateScooterDto } from './dto/update-scooter.dto';
+import { InjectModel } from '@nestjs/mongoose';
+import { Model } from 'mongoose';
+import { Scooter, ScooterDocument } from './schemas/scooter.schema';
 
 @Injectable()
 export class ScooterService {
-  create(createScooterDto: CreateScooterDto) {
-    return 'This action adds a new scooter';
+
+  constructor(@InjectModel(Scooter.name) private scooterModel: Model<ScooterDocument>) {}
+
+  async create(createScooterDto: CreateScooterDto): Promise<Scooter> {
+    const createdScooter = new this.scooterModel(createScooterDto);
+    return createdScooter.save();
   }
 
-  findAll() {
-    return `This action returns all scooter`;
+  async findAll(): Promise<Scooter[]> {
+    return this.scooterModel.find().exec();
   }
 
   findOne(id: number) {

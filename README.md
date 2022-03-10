@@ -14,7 +14,7 @@ type
 created_at
 
 
-## Scooter
+## ScooterSchema
 id
 product_id
 name
