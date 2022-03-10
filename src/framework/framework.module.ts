@@ -7,6 +7,7 @@ import { Framework, FrameworkSchema } from './schemas/framework.schema';
   imports: [
     MongooseModule.forFeature([{ name: Framework.name, schema: FrameworkSchema }]),
   ],
-  providers: [FrameworkService]
+  providers: [FrameworkService],
+  exports: [FrameworkService]
 })
 export class FrameworkModule {}

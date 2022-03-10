@@ -7,6 +7,7 @@ import { ScooterCharacteristicService } from './scooter-characteristic.service';
   imports: [
     MongooseModule.forFeature([{ name: ScooterCharacteristic.name, schema: ScooterCharacteristicSchema }]),
   ],
-  providers: [ScooterCharacteristicService]
+  providers: [ScooterCharacteristicService],
+  exports: [ScooterCharacteristicService]
 })
 export class ScooterCharacteristicModule {}

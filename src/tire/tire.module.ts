@@ -7,6 +7,7 @@ import { TireService } from './tire.service';
   imports: [
     MongooseModule.forFeature([{ name: Tire.name, schema: TireSchema }]),
   ],
-  providers: [TireService]
+  providers: [TireService],
+  exports: [TireService]
 })
 export class TireModule {}

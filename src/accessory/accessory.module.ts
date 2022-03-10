@@ -7,6 +7,7 @@ import { Accessory, AccessorySchema } from './schemas/accessory.schema';
   imports: [
     MongooseModule.forFeature([{ name: Accessory.name, schema: AccessorySchema }]),
   ],
-  providers: [AccessoryService]
+  providers: [AccessoryService],
+  exports: [AccessoryService]
 })
 export class AccessoryModule {}

@@ -7,6 +7,7 @@ import { Engine, EngineSchema } from './schemas/engine.schema';
   imports: [
     MongooseModule.forFeature([{ name: Engine.name, schema: EngineSchema }]),
   ],
-  providers: [EngineService]
+  providers: [EngineService],
+  exports: [EngineService]
 })
 export class EngineModule {}

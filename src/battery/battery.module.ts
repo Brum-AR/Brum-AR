@@ -7,6 +7,7 @@ import { Battery, BatterySchema } from './schemas/battery.schema';
   imports: [
     MongooseModule.forFeature([{ name: Battery.name, schema: BatterySchema }]),
   ],
-  providers: [BatteryService]
+  providers: [BatteryService],
+  exports: [BatteryService]
 })
 export class BatteryModule {}

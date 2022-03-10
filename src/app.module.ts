@@ -7,9 +7,7 @@ import { UserModule } from './user/user.module';
 import { MongooseModule } from '@nestjs/mongoose';
 import { ScooterModule } from './scooter/scooter.module';
 import { OrderModule } from './order/order.module';
-import { ProductModule } from "./product/product.module";
 import { TopCaseModule } from './top_case/top_case.module';
-import { ScooterSpecModule } from './scooter-spec/scooter-spec.module';
 import { EngineModule } from './engine/engine.module';
 import { BatteryModule } from './battery/battery.module';
 import { FrameworkModule } from './framework/framework.module';
@@ -23,9 +21,7 @@ import { ScooterCharacteristicModule } from './scooter-characteristic/scooter-ch
     UserModule,
     ScooterModule,
     OrderModule,
-    ProductModule,
     TopCaseModule,
-    ScooterSpecModule,
     EngineModule,
     BatteryModule,
     FrameworkModule,

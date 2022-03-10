@@ -7,6 +7,7 @@ import { Brake, BrakeSchema } from './schemas/brake.schema';
   imports: [
     MongooseModule.forFeature([{ name: Brake.name, schema: BrakeSchema }]),
   ],
-  providers: [BrakeService]
+  providers: [BrakeService],
+  exports: [BrakeService]
 })
 export class BrakeModule {}
