@@ -1,6 +1,1 @@
-
-
-export class User {
-  @PrimaryGeneratedColumn()
-  id: number;
-}
+export class User {}
