@@ -8,15 +8,15 @@ function HeroSection() {
     <div className='hero-container'>
       <video src='/videos/video-1.mp4' autoPlay loop muted />
       <h1>Découvrez Brumaire.</h1>
-      <p>Deux batteries portables, un moteur électrique puissant,  une clé numérique partagée</p><p>
-        et une application connectée </p><p> pour une expérience de conduite encore plus agréable.</p>
+      <p className='text'>Deux batteries portables, un moteur électrique puissant,  une clé numérique partagée</p><p className='text'>
+        et une application connectée </p><p className='text'> pour une expérience de conduite encore plus agréable.</p>
       <div className='hero-btns'>
         <Button
           className='btns'
           buttonStyle='btn--outline'
           buttonSize='btn--large'
         >
-           TRY AR
+           Réserver un essai
         </Button>
         <Button
           className='btns'
@@ -24,7 +24,7 @@ function HeroSection() {
           buttonSize='btn--large'
           onClick={console.log('hey')}
         >
-          TRY AR <i className='far fa-play-circle' />
+          Try AR <i className='far fa-play-circle' />
         </Button>
       </div>
     </div>

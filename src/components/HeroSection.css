@@ -5,7 +5,9 @@ video {
   position: fixed;
   z-index: -1;
 }
-
+.text {
+  font-size: 26px !important;
+}
 .hero-container {
   /* background: url('/images/img-home.jpg') center center/cover no-repeat; */
   height: 100vh;
@@ -28,8 +30,8 @@ video {
   margin-top: 8px;
   color: #fff;
   font-size: 32px;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
-    'Lucida Sans', Arial, sans-serif;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
 }
 
 .hero-btns {
@@ -37,7 +39,7 @@ video {
 }
 
 .hero-btns .btn {
-  margin: 6px;
+  margin: 12px;
 }
 
 .fa-play-circle {
