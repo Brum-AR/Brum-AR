@@ -12,7 +12,7 @@ export class ScooterService {
 
     const createdScooter = new this.scooterModel(
     {
-      name: "scooter",
+      name: "scooter bleu",
       price: 3200,
       max_speed: "45 Km/h",
       cylinder: "50 cc",

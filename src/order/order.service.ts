@@ -15,8 +15,9 @@ export class OrderService {
     ) {}
   async  create(createOrderDto: CreateOrderDto): Promise<Order> {
     const createdOrder = new this.orderModel(createOrderDto);
-    createdOrder.products_id = createOrderDto.products_id;
+    createdOrder.scooter_id = createOrderDto.scooter_id;
     createdOrder.user_id = createOrderDto.user_id;
+    createdOrder.top_case_id = createOrderDto.top_case_id;
     createdOrder.create_at= new Date(Date.now());
     return createdOrder.save();
   }
