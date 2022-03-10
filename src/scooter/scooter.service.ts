@@ -68,15 +68,7 @@ export class ScooterService {
     return this.scooterModel.find().exec();
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} scooter`;
-  }
-
-  update(id: number, updateScooterDto: UpdateScooterDto) {
-    return `This action updates a #${id} scooter`;
-  }
-
-  remove(id: string) {
-    return this.scooterModel.findByIdAndRemove(id);
+  findOne(id: string) {
+    return this.scooterModel.findById(id);
   }
 }

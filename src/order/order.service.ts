@@ -18,7 +18,6 @@ export class OrderService {
     createdOrder.products_id = createOrderDto.products_id;
     createdOrder.user_id = createOrderDto.user_id;
     createdOrder.create_at= new Date(Date.now());
-
     return createdOrder.save();
   }
 
@@ -26,15 +25,7 @@ export class OrderService {
     return this.orderModel.find().exec();
   }
 
-  findOne(id: String) {
-    return `This action returns a #${id} order`;
-  }
-
-  update(id: number, updateOrderDto: UpdateOrderDto) {
-    return `This action updates a #${id} order`;
-  }
-
-  remove(id: number) {
-    return `This action removes a #${id} order`;
+  findOne(id: string) {
+    return this.orderModel.findById(id);
   }
 }
