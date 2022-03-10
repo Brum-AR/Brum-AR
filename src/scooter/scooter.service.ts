@@ -12,7 +12,8 @@ export class ScooterService {
 
   async create(createScooterDto: CreateScooterDto): Promise<Scooter> {
     //const createdScooter = new this.scooterModel(createScooterDto);
-    const createdScooter = new this.scooterModel({
+    const createdScooter = new this.scooterModel(
+    {
       name: "scooter",
       price: 3200,
       max_speed: "45 Km/h",
@@ -53,13 +54,17 @@ export class ScooterService {
       usb_port: "inclus",
       eco_mode: "inclus",
       created_at: new Date()
-
-    })
+    }
+    )
 
     return createdScooter.save();
   }
 
   async findAll(): Promise<Scooter[]> {
+    return this.scooterModel.find().select('_id name price').exec();
+  }
+
+  async findAllDetails(): Promise<Scooter[]> {
     return this.scooterModel.find().exec();
   }
 

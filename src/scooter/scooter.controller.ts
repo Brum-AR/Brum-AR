@@ -17,6 +17,11 @@ export class ScooterController {
     return this.scooterService.findAll();
   }
 
+  @Get('/details')
+  findAllDetails() {
+    return this.scooterService.findAllDetails();
+  }
+
   @Get(':id')
   findOne(@Param('id') id: string) {
     return this.scooterService.findOne(+id);
