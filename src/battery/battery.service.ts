@@ -1,26 +1,34 @@
 import { Injectable } from '@nestjs/common';
-import { CreateBatteryDto } from './dto/create-battery.dto';
-import { UpdateBatteryDto } from './dto/update-battery.dto';
+import { InjectModel } from '@nestjs/mongoose';
+import { Model } from 'mongoose';
+import {Battery, BatteryDocument } from './schemas/battery.schema';
 
 @Injectable()
 export class BatteryService {
-  create(createBatteryDto: CreateBatteryDto) {
-    return 'This action adds a new battery';
+
+  constructor(@InjectModel(Battery.name) private batteryModel: Model<BatteryDocument>) {}
+
+  create() {
+    return new this.batteryModel(
+        {
+          type: "lithium",
+          brand: "Samsung",
+          power: " 60 Volts",
+          life: "20/40 Ah",
+          max_autonomy_ECO: "45/90 km",
+          charging_time: " 4 heures 30",
+          removable: true,
+          weight: 10,
+          created_at: new Date(),
+        }
+    )
   }
 
   findAll() {
-    return `This action returns all battery`;
+    return this.batteryModel.find().exec();
   }
 
   findOne(id: number) {
-    return `This action returns a #${id} battery`;
-  }
-
-  update(id: number, updateBatteryDto: UpdateBatteryDto) {
-    return `This action updates a #${id} battery`;
-  }
-
-  remove(id: number) {
-    return `This action removes a #${id} battery`;
+    return this.batteryModel.findById(id);
   }
 }

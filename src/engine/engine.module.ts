@@ -1,9 +1,12 @@
 import { Module } from '@nestjs/common';
+import { MongooseModule } from '@nestjs/mongoose';
 import { EngineService } from './engine.service';
-import { EngineController } from './engine.controller';
+import { Engine, EngineSchema } from './schemas/engine.schema';
 
 @Module({
-  controllers: [EngineController],
+  imports: [
+    MongooseModule.forFeature([{ name: Engine.name, schema: EngineSchema }]),
+  ],
   providers: [EngineService]
 })
 export class EngineModule {}

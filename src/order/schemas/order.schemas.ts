@@ -3,7 +3,7 @@ import { Document } from 'mongoose';
 import { Prop, Schema, SchemaFactory } from "@nestjs/mongoose";
 import mongoose from 'mongoose';
 import { Scooter } from 'src/scooter/schemas/scooter.schema';
-import { TopCase } from 'src/top_case/schemas/top_case.schemas';
+import { TopCase } from 'src/top_case/schemas/top_case.schema';
 import { User } from 'src/user/schemas/user.schema';
 
 export type OrderDocument = Order & Document;

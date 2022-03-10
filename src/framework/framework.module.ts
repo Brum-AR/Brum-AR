@@ -1,9 +1,12 @@
 import { Module } from '@nestjs/common';
+import { MongooseModule } from '@nestjs/mongoose';
 import { FrameworkService } from './framework.service';
-import { FrameworkController } from './framework.controller';
+import { Framework, FrameworkSchema } from './schemas/framework.schema';
 
 @Module({
-  controllers: [FrameworkController],
+  imports: [
+    MongooseModule.forFeature([{ name: Framework.name, schema: FrameworkSchema }]),
+  ],
   providers: [FrameworkService]
 })
 export class FrameworkModule {}

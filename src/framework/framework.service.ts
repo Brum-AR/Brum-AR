@@ -1,26 +1,34 @@
 import { Injectable } from '@nestjs/common';
-import { CreateFrameworkDto } from './dto/create-framework.dto';
-import { UpdateFrameworkDto } from './dto/update-framework.dto';
+import { InjectModel } from '@nestjs/mongoose';
+import { Model } from 'mongoose';
+import { Framework, FrameworkDocument } from './schemas/framework.schema';
+
 
 @Injectable()
 export class FrameworkService {
-  create(createFrameworkDto: CreateFrameworkDto) {
-    return 'This action adds a new framework';
+
+  constructor(@InjectModel(Framework.name) private frameworkModel: Model<FrameworkDocument>) {}
+
+  create() {
+    return new this.frameworkModel(
+        {
+          dimension: "1870 mm (longueur), 1140 mm (hauteur), 700 mm (largeur)",
+          saddle_height: "740 mm",
+          scooter_weight_without_battery: 76,
+          max_weight: 155,
+          front_suspension_type: "télescopique",
+          back_suspension_type: "deux combinés amortisseurs et bras oscillant",
+          assembly: "znen",
+          created_at: new Date(),
+        }
+    )
   }
 
   findAll() {
-    return `This action returns all framework`;
+    return this.frameworkModel.find().exec();
   }
 
   findOne(id: number) {
-    return `This action returns a #${id} framework`;
-  }
-
-  update(id: number, updateFrameworkDto: UpdateFrameworkDto) {
-    return `This action updates a #${id} framework`;
-  }
-
-  remove(id: number) {
-    return `This action removes a #${id} framework`;
+    return this.frameworkModel.findById(id);
   }
 }

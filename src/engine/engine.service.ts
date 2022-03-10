@@ -1,26 +1,29 @@
 import { Injectable } from '@nestjs/common';
-import { CreateEngineDto } from './dto/create-engine.dto';
-import { UpdateEngineDto } from './dto/update-engine.dto';
+import { InjectModel } from '@nestjs/mongoose';
+import { Model } from 'mongoose';
+import { Engine, EngineDocument } from './schemas/engine.schema';
 
 @Injectable()
 export class EngineService {
-  create(createEngineDto: CreateEngineDto) {
-    return 'This action adds a new engine';
+
+  constructor(@InjectModel(Engine.name) private engineModel: Model<EngineDocument>) {}
+
+  create() {
+    return new this.engineModel(
+        {
+          type: "Bosch Brushless",
+          position: "moyeu de roue arrière",
+          power: "3000 Watts",
+          created_at: new Date(),
+        }
+    )
   }
 
   findAll() {
-    return `This action returns all engine`;
+    return this.engineModel.find().exec();
   }
 
   findOne(id: number) {
-    return `This action returns a #${id} engine`;
-  }
-
-  update(id: number, updateEngineDto: UpdateEngineDto) {
-    return `This action updates a #${id} engine`;
-  }
-
-  remove(id: number) {
-    return `This action removes a #${id} engine`;
+    return this.engineModel.findById(id);
   }
 }

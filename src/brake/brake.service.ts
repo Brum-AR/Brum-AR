@@ -1,26 +1,30 @@
 import { Injectable } from '@nestjs/common';
-import { CreateBrakeDto } from './dto/create-brake.dto';
-import { UpdateBrakeDto } from './dto/update-brake.dto';
+import { InjectModel } from '@nestjs/mongoose';
+import { Model } from 'mongoose';
+import { Brake, BrakeDocument } from './schemas/brake.schema';
 
 @Injectable()
 export class BrakeService {
-  create(createBrakeDto: CreateBrakeDto) {
-    return 'This action adds a new brake';
+
+  constructor(@InjectModel(Brake.name) private brakeModel: Model<BrakeDocument>) {}
+
+  create() {
+    return new this.brakeModel(
+        {
+          braking_energy_recovery: true,
+          brakes: "à disque hydraulique",
+          brakes_size: "190 mm",
+          stirrups_type: "double pistons juxtaposés",
+          created_at: new Date(),
+        }
+    )
   }
 
   findAll() {
-    return `This action returns all brake`;
+    return this.brakeModel.find().exec();
   }
 
   findOne(id: number) {
-    return `This action returns a #${id} brake`;
-  }
-
-  update(id: number, updateBrakeDto: UpdateBrakeDto) {
-    return `This action updates a #${id} brake`;
-  }
-
-  remove(id: number) {
-    return `This action removes a #${id} brake`;
+    return this.brakeModel.findById(id);
   }
 }

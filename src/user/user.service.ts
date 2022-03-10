@@ -11,7 +11,7 @@ export class UserService {
 
   async create(createUserDto: CreateUserDto): Promise<User> {
     const user = await this.model.create(createUserDto);
-    user.created_at = new Date(Date.now());
+    user.created_at = new Date();
     return user.save();
   }
 

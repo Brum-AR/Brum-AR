@@ -1,9 +1,12 @@
 import { Module } from '@nestjs/common';
+import { MongooseModule } from '@nestjs/mongoose';
 import { BrakeService } from './brake.service';
-import { BrakeController } from './brake.controller';
+import { Brake, BrakeSchema } from './schemas/brake.schema';
 
 @Module({
-  controllers: [BrakeController],
+  imports: [
+    MongooseModule.forFeature([{ name: Brake.name, schema: BrakeSchema }]),
+  ],
   providers: [BrakeService]
 })
 export class BrakeModule {}

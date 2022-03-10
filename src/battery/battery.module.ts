@@ -1,9 +1,12 @@
 import { Module } from '@nestjs/common';
+import { MongooseModule } from '@nestjs/mongoose';
 import { BatteryService } from './battery.service';
-import { BatteryController } from './battery.controller';
+import { Battery, BatterySchema } from './schemas/battery.schema';
 
 @Module({
-  controllers: [BatteryController],
+  imports: [
+    MongooseModule.forFeature([{ name: Battery.name, schema: BatterySchema }]),
+  ],
   providers: [BatteryService]
 })
 export class BatteryModule {}

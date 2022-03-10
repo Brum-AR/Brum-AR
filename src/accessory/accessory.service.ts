@@ -1,26 +1,32 @@
 import { Injectable } from '@nestjs/common';
-import { CreateAccessoryDto } from './dto/create-accessory.dto';
-import { UpdateAccessoryDto } from './dto/update-accessory.dto';
+import { InjectModel } from '@nestjs/mongoose';
+import { Model } from 'mongoose';
+import { Accessory, AccessoryDocument } from './schemas/accessory.schema';
 
 @Injectable()
 export class AccessoryService {
-  create(createAccessoryDto: CreateAccessoryDto) {
-    return 'This action adds a new accessory';
+
+  constructor(@InjectModel(Accessory.name) private accessoryModel: Model<AccessoryDocument>) {}
+
+  create() {
+    return new this.accessoryModel(
+      {
+        alarm_and_geotracking: "en option",
+        top_case: "en option",
+        windshield: "en option",
+        portable_key: "en option",
+        usb_port: "inclus",
+        eco_mode: "inclus",
+        created_at: new Date(),
+      }
+    )
   }
 
   findAll() {
-    return `This action returns all accessory`;
+    return this.accessoryModel.find().exec();
   }
 
   findOne(id: number) {
-    return `This action returns a #${id} accessory`;
-  }
-
-  update(id: number, updateAccessoryDto: UpdateAccessoryDto) {
-    return `This action updates a #${id} accessory`;
-  }
-
-  remove(id: number) {
-    return `This action removes a #${id} accessory`;
+    return this.accessoryModel.findById(id);
   }
 }
