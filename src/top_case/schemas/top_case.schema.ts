@@ -5,13 +5,13 @@ export type TopCaseDocument = TopCase & Document;
 @Schema()
 export class TopCase {
 
-  @Prop({required:true})
-  description : string;
+  @Prop({ required: true })
+  description: string;
 
-  @Prop({required:true})
-  price : number;
+  @Prop({ required: true })
+  price: number;
 
   @Prop()
-  create_at: Date;
+  created_at: Date;
 }
 export const TopCaseSchema = SchemaFactory.createForClass(TopCase);
