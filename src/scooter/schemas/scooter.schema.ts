@@ -11,6 +11,12 @@ export class Scooter {
   price: number;
 
   @Prop()
+  color: string;
+
+  @Prop()
+  saddle_color: string;
+
+  @Prop()
   max_speed: string;
 
   @Prop()

@@ -1,24 +1,19 @@
 import { Controller, Get, Post, Body, Param } from '@nestjs/common';
 import { ScooterService } from './scooter.service';
-import { CreateScooterDto } from './dto/create-scooter.dto';
 
 @Controller('scooter')
 export class ScooterController {
   constructor(private readonly scooterService: ScooterService) {}
 
   @Post()
-  create(@Body() createScooterDto: CreateScooterDto) {
-    return this.scooterService.create(createScooterDto);
+  create(){
+    //TEMPORARY
+    return this.scooterService.create();
   }
 
   @Get()
   findAll() {
     return this.scooterService.findAll();
-  }
-
-  @Get('/details')
-  findAllDetails() {
-    return this.scooterService.findAllDetails();
   }
 
   @Get(':id')

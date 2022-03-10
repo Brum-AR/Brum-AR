@@ -1,7 +1,9 @@
 {
   "name": "scooter",
   "price": 3200,
-  "scooter_spec": {
+  "color": "vert",
+  "saddle_color": "noir",
+  "scooter_characteristics": {
     "max_speed": "45 Km/h",
     "cylinder": "50 cc",
     "license": "permis AM, BSR ou permis B",
