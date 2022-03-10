@@ -3,9 +3,10 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { UserModule } from './user/user.module';
 import { MongooseModule } from '@nestjs/mongoose';
+import { OrderModule } from './order/order.module';
 
 @Module({
-  imports: [UserModule, MongooseModule.forRoot(process.env.DATABASE_URI)],
+  imports: [UserModule, MongooseModule.forRoot("mongodb+srv://root:root@cluster0.kpikx.mongodb.net/brumar?retryWrites=true&w=majority")],
   controllers: [AppController],
   providers: [AppService],
 })
