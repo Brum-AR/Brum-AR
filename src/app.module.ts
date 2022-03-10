@@ -8,7 +8,11 @@ import { OrderModule } from './order/order.module';
 
 
 @Module({
-  imports: [MongooseModule.forRoot("mongodb+srv://root:root@cluster0.kpikx.mongodb.net/brumar?retryWrites=true&w=majority"), UserModule, ScooterModule, OrderModule],
+  imports: [
+    MongooseModule.forRoot("mongodb+srv://root:root@cluster0.kpikx.mongodb.net/brumar?retryWrites=true&w=majority"),
+    UserModule,
+    ScooterModule,
+    OrderModule],
   controllers: [AppController],
   providers: [AppService],
 })

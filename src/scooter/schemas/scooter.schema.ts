@@ -1,6 +1,4 @@
-import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
-import { Document, Schema } from "mongoose";
-import Date = module
+import { Prop,Schema, SchemaFactory } from '@nestjs/mongoose';
 
 export type ScooterDocument = Scooter & Document;
 
@@ -121,8 +119,7 @@ export class Scooter {
   eco_mode: string;
 
   @Prop()
-  created_at: { type : Date, default: Date.now };
-
+  created_at: Date;
 }
 
 export const ScooterSchema = SchemaFactory.createForClass(Scooter);
