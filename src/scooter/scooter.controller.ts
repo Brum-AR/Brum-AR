@@ -29,6 +29,6 @@ export class ScooterController {
 
   @Delete(':id')
   remove(@Param('id') id: string) {
-    return this.scooterService.remove(+id);
+    return this.scooterService.remove(id);
   }
 }

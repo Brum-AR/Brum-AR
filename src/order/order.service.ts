@@ -5,7 +5,7 @@ import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { Order, OrderDocument } from './schemas/order.schemas';
 import { Scooter, ScooterDocument } from "../scooter/schemas/scooter.schema";
-import { User, UserDocument } from "../user/entities/user.entity";
+
 
 @Injectable()
 export class OrderService {
@@ -17,6 +17,8 @@ export class OrderService {
     const createdOrder = new this.orderModel(createOrderDto);
     createdOrder.products_id = createOrderDto.products_id;
     createdOrder.user_id = createOrderDto.user_id;
+    createdOrder.create_at= new Date(Date.now());
+
     return createdOrder.save();
   }
 

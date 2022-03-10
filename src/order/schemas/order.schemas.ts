@@ -9,9 +9,6 @@ export type OrderDocument = Order & Document;
 @Schema()
 export class Order {
 
-  @Prop()
-  id : string;
-
   @Prop({required:true})
   user_id : string;
 
