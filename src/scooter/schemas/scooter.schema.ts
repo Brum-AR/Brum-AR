@@ -1,5 +1,4 @@
-import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
-import { Document } from "mongoose";
+import { Prop,Schema, SchemaFactory } from '@nestjs/mongoose';
 
 export type ScooterDocument = Scooter & Document;
 
@@ -22,9 +21,6 @@ export class Scooter {
 
   @Prop()
   reverse_gear: boolean;
-
-  @Prop()
-  control_screen: string;
 
   @Prop()
   anti_theft_security: string;
@@ -54,7 +50,7 @@ export class Scooter {
   battery_life: string;
 
   @Prop()
-  battery_max_autonomy_ECO: string;
+  battery_max_autonomy: string;
 
   @Prop()
   battery_charging_time: string;
@@ -87,7 +83,7 @@ export class Scooter {
   assembly: string;
 
   @Prop()
-  braking_energy_recovery: boolean;
+  braking_energy_recovery: string;
 
   @Prop()
   brakes: string;
@@ -124,7 +120,6 @@ export class Scooter {
 
   @Prop()
   created_at: Date;
-
 }
 
 export const ScooterSchema = SchemaFactory.createForClass(Scooter);
