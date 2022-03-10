@@ -12,8 +12,10 @@ export class Order {
   @Prop({required:true})
   user_id : string;
 
-  @Prop({required:true})
-  products_id : string[];
+  @Prop()
+  scooter_id : string;
+  @Prop()
+  top_case_id : string;
 
   @Prop()
   create_at: Date;
