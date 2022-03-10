@@ -5,10 +5,6 @@ import Scooter from './Scooter'
 import './ArItem.css'
 import AnimatedSphere from './AnimatedSphere'
 
-
-
-
-
 const ArItem = () => {
   return (
       <>
@@ -24,8 +20,7 @@ const ArItem = () => {
           <directionalLight position={[-2,5,2]} intensity={1} />
           <AnimatedSphere />
          </Canvas>
-       
-         
+
     <div>ArItem</div>
     </>
   )
