@@ -45,7 +45,7 @@ export class ScooterService {
         brake: brake,
         tire: tire,
         accessory: accessory,
-        created_at: new Date()
+        created_at: new Date(Date.now())
       }
     )
 
