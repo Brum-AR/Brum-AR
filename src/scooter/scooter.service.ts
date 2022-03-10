@@ -11,7 +11,13 @@ export class ScooterService {
   constructor(@InjectModel(Scooter.name) private scooterModel: Model<ScooterDocument>) {}
 
   async create(createScooterDto: CreateScooterDto): Promise<Scooter> {
-    const createdScooter = new this.scooterModel(createScooterDto);
+    //const createdScooter = new this.scooterModel(createScooterDto);
+    const createdScooter = new this.scooterModel({
+
+
+
+    })
+
     return createdScooter.save();
   }
 
