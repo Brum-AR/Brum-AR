@@ -1,8 +1,19 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import './Cards.css';
 import CardItem from './CardItem';
+import axios from "axios";
 
 function Cards() {
+  // let loading = true;
+  // let scooters = null;
+  //
+  // useEffect(() => {
+  //   fetchScooters().then(r => scooters = null);
+  // }, [])
+  //
+  // if (loading === null) {
+  //   return <h2>Chargement des publications...</h2>;
+  // }
   return (
     <div className='cards'>
       <h1>Découvrez nos modèles les plus populaires</h1>
@@ -42,6 +53,14 @@ function Cards() {
       </div>
     </div>
   );
+
+  // async function fetchScooters() {
+  //   axios
+  //       .get("https://brum-ar-api.herokuapp.com/scooter/")
+  //       .then(response => console.log(response.data))
+  //       .catch(error => console.log(error))
+  //       .finally(() => loading = false)
+  // }
 }
 
 export default Cards;

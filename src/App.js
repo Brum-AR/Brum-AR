@@ -2,11 +2,12 @@ import React from 'react';
 import Navbar from './components/Navbar';
 import './App.css';
 import Home from './components/pages/Home';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import Services from './components/pages/Services';
 import Products from './components/pages/Products';
 import SignUp from './components/pages/SignUp';
 import ArItem from './components/ArItem';
+
 import  ScooterDetails  from './components/ScooterDetails';
 import Login from './components/Login'
 
@@ -23,7 +24,7 @@ function App() {
           
            <Route path='/test' component={ScooterDetails} />
            <Route path='/login' component={Login} />
-           
+           <Route path='/cart' component={Cart}/>
         </Switch>
       </Router>
     </>

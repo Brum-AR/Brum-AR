@@ -1,0 +1,12 @@
+.article {
+    display: flex;
+    justify-content: center;
+    width: 500px;
+    margin: 10px;
+    padding: 10px;
+    box-shadow: 0 2px 8px 0 rgba(99, 99, 99, 0.2);
+}
+
+.article__img {
+    height: 100px;
+}
