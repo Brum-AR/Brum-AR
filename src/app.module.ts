@@ -6,13 +6,7 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { ScooterModule } from './scooter/scooter.module';
 
 @Module({
-  imports: [
-    UserModule,
-    MongooseModule.forRoot(
-      'mongodb+srv://root:root@cluster0.kpikx.mongodb.net/brumar?retryWrites=true&w=majority',
-    ),
-    ScooterModule,
-  ],
+  imports: [MongooseModule.forRoot("mongodb+srv://root:root@cluster0.kpikx.mongodb.net/brumar?retryWrites=true&w=majority"), UserModule, ScooterModule],
   controllers: [AppController],
   providers: [AppService],
 })
