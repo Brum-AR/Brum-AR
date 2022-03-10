@@ -16,7 +16,7 @@ function HeroSection() {
           buttonStyle='btn--outline'
           buttonSize='btn--large'
         >
-           Réserver un essai
+           Réserver Un Essai
         </Button>
         <Button
           className='btns'
@@ -24,7 +24,7 @@ function HeroSection() {
           buttonSize='btn--large'
           onClick={console.log('hey')}
         >
-          Try AR <i className='far fa-play-circle' />
+          Essayez AR <i className='far fa-play-circle' />
         </Button>
       </div>
     </div>

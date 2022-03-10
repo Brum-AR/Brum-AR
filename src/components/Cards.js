@@ -18,6 +18,7 @@ function Cards() {
             <CardItem
               src='images/scooter2.png'
               text='Model 2'
+              
               label='Luxury'
               path='/services'
             />

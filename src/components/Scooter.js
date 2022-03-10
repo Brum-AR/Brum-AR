@@ -1,23 +1,11 @@
 import React, {useRef, Suspense} from 'react';
 import { Canvas } from "@react-three/fiber";
 import { Environment, OrbitControls, useGLTF } from "@react-three/drei";
-import {proxy, useSnapshot} from 'valtio'
+
+import './ArItem.css'
 
 
 
-const state = proxy({
-  current: null,
-  items: {
-    laces: "#ff3",
-    mesh: "#3f3",
-    caps: "#3f3",
-    inner: "#3f3",
-    sole: "#3f3",
-    stripes: "#3f3",
-    band: "#3f3",
-    patch: "#3f3",
-  },
-})
 
 
 function Scooter() {
@@ -30,11 +18,12 @@ function Scooter() {
 export default function Test() {
     return (
         <>
-        <Canvas className="canvas">
+        <Canvas className="canvas" >
             <ambientLight intensity={1} />
              <directionalLight position={[-2,5,2]} intensity={0.5} />
             <Suspense fallback={null}>
                 <Scooter />
+                 <Environment preset="dawn" background />
                 <OrbitControls />
             </Suspense>
         </Canvas>

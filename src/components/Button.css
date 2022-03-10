@@ -4,6 +4,8 @@
 
 .btn {
   padding: 8px 20px;
+
+  margin: 0 14px;
   border-radius: 2px;
   outline: none;
   border: none;
@@ -21,6 +23,13 @@
   color: #fff;
   padding: 8px 20px;
   border: 1px solid var(--primary);
+  transition: all 0.3s ease-out;
+}
+.btn--darkoutline {
+  background-color: transparent;
+  color: rgb(27, 27, 27);
+  padding: 8px 20px;
+  border: 1px solid black;
   transition: all 0.3s ease-out;
 }
 

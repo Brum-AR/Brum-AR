@@ -3,7 +3,8 @@ import '../../App.css';
 import Cards from '../Cards';
 
 export default function Products() {
-  return <><p>hhh</p>
+  return <>
+
    <Cards /></>
   ;
 }
