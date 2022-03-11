@@ -24,7 +24,7 @@ export class ScooterService {
 
   async create() {
 
-    const scooter_characteristics = this.scooterCharacteristicService.create();
+    /*const scooter_characteristics = this.scooterCharacteristicService.create();
     const engine = this.engineService.create();
     const battery = this.batteryService.create();
     const framework = this.frameworkService.create();
@@ -51,7 +51,8 @@ export class ScooterService {
       }
     )
 
-    //return createdScooter.save();
+    return createdScooter.save();
+    */
      return {
          "statusCode": 403,
          "message": "You don't have the right to access this endpoint.",
@@ -65,13 +66,13 @@ export class ScooterService {
 
   async findOne(id: string) {
       const retrievedScooter = await this.scooterModel.findById(id);
-      const retrievedScooterCharacteristic = await this.scooterCharacteristicService.findOne("622ab5cf75a8d9a87b52465b");
-      const retrievedEngine = await this.engineService.findOne("622ab5cf75a8d9a87b52465c");
-      const retrievedBattery = await this.batteryService.findOne("622ab5cf75a8d9a87b52465d");
-      const retrievedFramework = await this.frameworkService.findOne("622ab5cf75a8d9a87b52465e");
-      const retrievedBrake = await this.brakeService.findOne("622ab5cf75a8d9a87b52465f");
-      const retrievedTire = await this.tireService.findOne("622ab5cf75a8d9a87b524660");
-      const retrievedAccessory = await this.accessoryService.findOne("622ab5cf75a8d9a87b524661");
+      const retrievedScooterCharacteristic = await this.scooterCharacteristicService.findOne("622ad23074c0da8ffadb0216");
+      const retrievedEngine = await this.engineService.findOne("622ad23074c0da8ffadb0217");
+      const retrievedBattery = await this.batteryService.findOne("622ad23074c0da8ffadb0218");
+      const retrievedFramework = await this.frameworkService.findOne("622ad23074c0da8ffadb0219");
+      const retrievedBrake = await this.brakeService.findOne("622ad23074c0da8ffadb021a");
+      const retrievedTire = await this.tireService.findOne("622ad23074c0da8ffadb021b");
+      const retrievedAccessory = await this.accessoryService.findOne("622ad23074c0da8ffadb021c");
 
         return {
             "_id": id,

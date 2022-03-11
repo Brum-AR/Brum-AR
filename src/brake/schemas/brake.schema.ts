@@ -7,7 +7,7 @@ export type BrakeDocument = Brake & Document;
 export class Brake {
 
     @Prop()
-    braking_energy_recovery: string;
+    braking_energy_recovery: boolean;
 
     @Prop()
     brakes: string;

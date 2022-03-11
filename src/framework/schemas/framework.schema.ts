@@ -13,7 +13,7 @@ export class Framework {
     saddle_height : string;
 
     @Prop()
-    scooter_weight_without_battery : string;
+    scooter_weight_without_battery : number;
 
     @Prop()
     max_weight : number;
