@@ -26,7 +26,7 @@ export class AccessoryService {
     return this.accessoryModel.find().exec();
   }
 
-  findOne(id: number) {
+  findOne(id: string) {
     return this.accessoryModel.findById(id);
   }
 }

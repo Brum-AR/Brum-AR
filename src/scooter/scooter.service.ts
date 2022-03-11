@@ -34,10 +34,12 @@ export class ScooterService {
 
     const createdScooter = new this.scooterModel(
       {
-        name: "scooter",
+        name: "Scooter",
         price: 3200,
-        color: "vert",
-        saddle_color: "noir",
+        color: "Gris",
+          // Vert Bleu Beige Gris
+        saddle_color: "Noir",
+          // Beige Noir
         scooter_characteristics: scooter_characteristics,
         engine: engine,
         battery: battery,
@@ -52,7 +54,7 @@ export class ScooterService {
     return createdScooter.save();
   }
 
-  async findAll(): Promise<Scooter[]> {
+  async findAll() {
     return this.scooterModel.find().select('_id name color saddle_color price').exec();
   }
 
