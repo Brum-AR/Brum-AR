@@ -2,7 +2,7 @@ import React, {useRef, useState} from 'react'
 import './Login.css';
 import axios from "axios";
 
-const Login = () => {
+const Login = (props) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const emailInput = useRef(null);
@@ -24,6 +24,7 @@ const Login = () => {
     function clear() {
         emailInput.current.value = '';
         passwordInput.current.value = '';
+        props.history.push('/products')
     }
 
     return (
