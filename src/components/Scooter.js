@@ -1,12 +1,7 @@
 import React, {Suspense} from 'react';
 import { Canvas } from "@react-three/fiber";
 import { Environment, OrbitControls, useGLTF } from "@react-three/drei";
-
-import './ArItem.css'
-
-
-
-
+import './Scooter.css'
 
 function Scooter() {
     const { scene } = useGLTF('/Scooter.glb')
@@ -27,7 +22,6 @@ export default function Test() {
                 <OrbitControls />
             </Suspense>
         </Canvas>
-       
         </>
     );
 }

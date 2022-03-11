@@ -4,8 +4,6 @@ import {getImg} from "./common/FileUtils";
 
 function CardItem(props) {
 
-
-
   return (
     <>
       <li className='cards__item'>

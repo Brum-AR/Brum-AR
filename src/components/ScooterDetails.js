@@ -76,17 +76,15 @@ const ScooterDetails = (props) => {
                 <Tabs>
                     <Tab label="Général">
                         <div className='details_line'>
-                         
-
                             <p>{'Name: '}{scooter.name}</p>
-                             <p>{'Price: '}{scooter.price + " €"}</p>
-                              <p>{'Color: '}{scooter.color}</p>
-                               <p>{'Max Vitesse: '}{scooter.scooter_characteristics.max_speed}</p>
-                               <p>{'Cylinder: '}{scooter.scooter_characteristics.cylinder}</p>
-                               <p>{'License: '}{scooter.scooter_characteristics.license}</p>
-                               <p>{'Control Screen: '}{scooter.scooter_characteristics.control_screen}</p>
-                               <p>{'Anti-vol Security: '}{scooter.scooter_characteristics.anti_theft_security}</p>
-                               <p>{'Crutch: '}{scooter.scooter_characteristics.crutch}</p>
+                            <p>{'Price: '}{scooter.price + " €"}</p>
+                            <p>{'Color: '}{scooter.color}</p>
+                            <p>{'Max Vitesse: '}{scooter.scooter_characteristics.max_speed}</p>
+                            <p>{'Cylinder: '}{scooter.scooter_characteristics.cylinder}</p>
+                            <p>{'License: '}{scooter.scooter_characteristics.license}</p>
+                            <p>{'Control Screen: '}{scooter.scooter_characteristics.control_screen}</p>
+                            <p>{'Anti-vol Security: '}{scooter.scooter_characteristics.anti_theft_security}</p>
+                            <p>{'Crutch: '}{scooter.scooter_characteristics.crutch}</p>
                         </div>
                     </Tab>
                     <Tab label="Moteur" >
@@ -112,8 +110,6 @@ const ScooterDetails = (props) => {
                     </Tab>
                     <Tab label="Cadre">
                         <div className='details_line'>
-
-
                             <p>{'Dimension: '}{scooter.framework.dimension}</p>
                             <p>{'Saddle-height: '}{scooter.framework.saddle_height}</p>
                             <p>{'Weight-without-battery: '}{scooter.framework.scooter_weight_without_battery}</p>
@@ -125,7 +121,6 @@ const ScooterDetails = (props) => {
                     </Tab>
                     <Tab label="Pneus &#38; Freins">
                         <div className='details_line'>
-
                             <p>{'Braking-energy-recovery: '}{scooter.brake.braking_energy_recovery.toString()}</p>
                             <p>{'Brake :'}{scooter.brake.brakes}</p>
                             <p>{'Brake-size :'}{scooter.brake.brakes_size}</p>
@@ -134,20 +129,14 @@ const ScooterDetails = (props) => {
                     </Tab>
                     <Tab label="Accessoires">
                         <div className='details_line'>
-
-<div></div>
                             <p>{'Alarm and Geotracking: '} {scooter.accessory.alarm_and_geotracking}</p>
                             <p>{'Windshield :'}{scooter.accessory.windshield}</p>
                             <p>{'Portable-key :'}{scooter.accessory.portable_key}</p>
                             <p>{'Usb-port :'}{scooter.accessory.usb_port}</p>
                             <p>{'Eco-mode :'}{scooter.accessory.eco_mode}</p>
-
-
-
                         </div>
                     </Tab>
                 </Tabs>
-
             </div>
             <div className='details__footer'>
                 <Link to={'/cart?scooter_id=' + props.match.params.id} className='details__command'>Commander</Link>
