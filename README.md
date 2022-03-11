@@ -107,3 +107,7 @@
           "top_case":"622ac52300b4dbad9121dba2"
       }
 ```
+
+## Usage
+    - npm install  
+    - npm start
