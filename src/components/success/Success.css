@@ -1,0 +1,29 @@
+.success {
+    text-align: center;
+    position: absolute;
+    top: 35%;
+    left: 40%;
+    background: white;
+    padding: 50px;
+    box-shadow: rgba(56, 56, 56, 0.2) 0 8px 24px;
+
+}
+
+.success__message {
+    font-size: 25px;
+    color: #4b4b4b;
+}
+
+.success__next {
+    margin-top: 50px;
+    padding: 10px 50px;
+    text-transform: uppercase;
+    border: 2px #36a836 solid;
+    color: #36a836;
+    cursor: pointer;
+}
+
+.success__next:hover {
+    background: #36a836;
+    color: white;
+}
