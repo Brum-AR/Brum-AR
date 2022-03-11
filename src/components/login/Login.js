@@ -3,14 +3,14 @@ import './Login.css';
 import axios from "axios";
 
 const Login = () => {
-    const [username, setUsername] = useState("");
+    const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const usernameInput = useRef(null);
+    const emailInput = useRef(null);
     const passwordInput = useRef(null);
 
     function connect() {
         const body = {
-            username,
+            username: email,
             password
         }
 
@@ -22,7 +22,7 @@ const Login = () => {
     }
 
     function clear() {
-        usernameInput.current.value = '';
+        emailInput.current.value = '';
         passwordInput.current.value = '';
     }
 
@@ -30,8 +30,8 @@ const Login = () => {
         <>
             <div className='login'>
                 <div className='login__form'>
-                    <input ref={usernameInput} className='form__text' onChange={e => setUsername(e.target.value)} type={"text"} placeholder={"username"}/>
-                    <input ref={passwordInput} className='form__text' onChange={e => setPassword(e.target.value)} type={"text"} placeholder={"password"}/>
+                    <input ref={emailInput} className='form__text' onChange={e => setEmail(e.target.value)} type={"text"} placeholder={"username"}/>
+                    <input ref={passwordInput} className='form__text' onChange={e => setPassword(e.target.value)} type={"password"} placeholder={"password"}/>
                     <input className='form__submit' onClick={() => connect()} type={"submit"} placeholder={"login"}/>
                 </div>
             </div>

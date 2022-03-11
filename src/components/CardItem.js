@@ -1,16 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import {getImg} from "./common/FileUtils";
 
 function CardItem(props) {
 
-  function getImg() {
-    switch (props.color.toLowerCase()) {
-      case 'beige': return 'images/scooter1.png';
-      case 'bleu': return 'images/scooter2.png';
-      case 'vert': return 'images/scooter3.png';
-      case 'gris': return 'images/scooter4.png';
-    }
-  }
+
 
   return (
     <>
@@ -20,7 +14,7 @@ function CardItem(props) {
             <img
               className='cards__item__img'
               alt='Travel Image'
-              src={getImg()}
+              src={getImg(props.color.toLowerCase())}
             />
           </figure>
           <div className='cards__item__info'>

@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react'
 import Scooter from './Scooter'
 import './ScooterDetails.css'
 import axios from "axios";
+import {Link} from "react-router-dom";
 
 class Tabs extends React.Component {
     state = {
@@ -110,7 +111,9 @@ const ScooterDetails = (props) => {
                     </Tab>
                 </Tabs>
 
-                <button className='details__command'>Commander</button>
+            </div>
+            <div className='details__footer'>
+                <Link to={'/cart/' + props.match.params.id} className='details__command'>Commander</Link>
             </div>
         </>
     )

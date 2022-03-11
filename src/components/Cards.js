@@ -17,11 +17,7 @@ function Cards() {
     }, [scooters])
 
     if (loading === true) {
-        return (
-            <div id="overlay">
-                <div className="loader"/>
-            </div>
-        )
+        return <div className="loader"/>
     }
     return (
         <div className='cards'>
