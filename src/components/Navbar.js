@@ -69,11 +69,8 @@ function Navbar() {
               </Link>
             </li>
           </ul>
-          <Link to="/cart">
-            <Button buttonStyle="btn--darkoutline">Cart</Button>
-          </Link>
-          {button && <Button buttonStyle="btn--darkoutline">Cart</Button>}
-          {button && <Button buttonStyle="btn--darkoutline">Login</Button>}
+          {button && <Link to="/cart" className='btn--darkoutline'>Cart</Link>}
+          {button && <Link to="/login" className='btn--darkoutline'>Login</Link>}
         </div>
       </nav>
     </>

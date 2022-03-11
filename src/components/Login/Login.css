@@ -45,4 +45,9 @@
     background: white;
     font-size: 12px;
     padding: 8px;
+    transition: all 0.3s ease-out;
+}
+
+.form__submit:hover {
+    background: rgba(255, 255, 255, 0.8);
 }

@@ -17,7 +17,11 @@ function Cards() {
     }, [scooters])
 
     if (loading === true) {
-        return <div className="loader"></div>;
+        return (
+            <div id="overlay">
+                <div className="loader"/>
+            </div>
+        )
     }
     return (
         <div className='cards'>
@@ -27,10 +31,12 @@ function Cards() {
                     {scooters.map(scooter => (
                         <ul className='cards__items'>
                             <CardItem
+                                id={scooter._id}
                                 src='images/scooter1.png'
-                                text={scooter.name}
-                                label='Adventure'
-                                path='/services'
+                                name={scooter.name}
+                                color={scooter.color}
+                                colorSaddle={scooter.saddle_color}
+                                price={scooter.price}
                             />
                         </ul>
                     ))}
