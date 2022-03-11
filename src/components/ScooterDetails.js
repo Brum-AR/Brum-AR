@@ -63,7 +63,7 @@ const ScooterDetails = (props) => {
     }, [scooter])
 
     if (loading === true) {
-        return <div className="loader"></div>;
+        return <div className="loader"/>;
     }
     return (
         <>
@@ -109,6 +109,8 @@ const ScooterDetails = (props) => {
                         </div>
                     </Tab>
                 </Tabs>
+
+                <button className='details__command'>Commander</button>
             </div>
         </>
     )
