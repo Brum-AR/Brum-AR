@@ -24,8 +24,7 @@ function App() {
                     <Route path='/test' component={ScooterDetails}/>
                     <Route path='/details/:id' component={ScooterDetails}/>
                     <Route path='/login' component={Login}/>
-                    <Route path='/cart/:scooter_id' component={Cart}/>
-                    <Route path='/cart/:scooter_id/:top_case_id' component={Cart}/>
+                    <Route path='/cart' component={Cart}/>
                 </Switch>
             </Router>
         </>

@@ -1,17 +1,17 @@
 import React, {useEffect, useState} from 'react';
 import './Cart.css';
 import axios from "axios";
-import {getImg} from "../common/FileUtils";
 
 const Cart = (props) => {
     let [loading, setLoading] = useState(true);
     let [articles, setArticles] = useState([]);
     let [scooter, setScooter] = useState(null);
     let [topCase, setTopCase] = useState(null);
+    const queryStream = new URLSearchParams(props.location.search)
 
     useEffect(() => {
-        getScooter()
-        getTopcases()
+        getScooter(queryStream.get('scooter_id'))
+        getTopcases(queryStream.get('top_case_id'))
     }, [])
     useEffect(() => {
         console.log(scooter)
@@ -39,10 +39,10 @@ const Cart = (props) => {
             })
     }
 
-    function getScooter() {
+    function getScooter(id) {
         setLoading(true)
         axios
-            .get("https://brum-ar-api.herokuapp.com/scooter/" + props.match.params.scooter_id)
+            .get("https://brum-ar-api.herokuapp.com/scooter/" + id)
             .then(response => {
                 addArticle(response.data)
                 setScooter(response.data)
@@ -51,11 +51,11 @@ const Cart = (props) => {
             .finally(() => setLoading(false))
     }
 
-    function getTopcases() {
-        if (!props.match.params.top_case_id) return;
+    function getTopcases(id) {
+        if (!id) return;
         setLoading(true)
         axios
-            .get("https://brum-ar-api.herokuapp.com/top-case/" + props.match.params.top_case_id)
+            .get("https://brum-ar-api.herokuapp.com/top-case/" + id)
             .then(response => {
                 setTopCase(response.data)
             })
@@ -72,11 +72,11 @@ const Cart = (props) => {
                 {
                     Array.from(articles).map(it => (
                         <div className='article'>
-                            <img
-                                className='cards__item__img'
-                                alt='..'
-                                src={getImg(props.color.toLowerCase())}
-                            />
+                            {/*<img*/}
+                            {/*    className='cards__item__img'*/}
+                            {/*    alt='..'*/}
+                            {/*    src={getImg(props.color.toLowerCase())}*/}
+                            {/*/>*/}
                             <ul className='article__description'>
                                 <li className='article__name'>{it._id || ''}</li>
                                 <li className='article__name'>{it.name || ''}</li>

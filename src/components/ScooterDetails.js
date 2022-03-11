@@ -113,7 +113,7 @@ const ScooterDetails = (props) => {
 
             </div>
             <div className='details__footer'>
-                <Link to={'/cart/' + props.match.params.id} className='details__command'>Commander</Link>
+                <Link to={'/cart?scooter_id=' + props.match.params.id} className='details__command'>Commander</Link>
             </div>
         </>
     )

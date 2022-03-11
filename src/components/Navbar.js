@@ -69,7 +69,7 @@ function Navbar() {
               </Link>
             </li>
           </ul>
-          {button && <Link to="/cart" className='btn--darkoutline'>Cart</Link>}
+          {/*{button && <Link to="/cart" className='btn--darkoutline'>Cart</Link>}*/}
           {button && <Link to="/login" className='btn--darkoutline'>Login</Link>}
         </div>
       </nav>

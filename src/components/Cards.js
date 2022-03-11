@@ -25,7 +25,7 @@ function Cards() {
             <div className='cards__container'>
                 <div className='cards__wrapper'>
                     {scooters.map(scooter => (
-                        <ul className='cards__items'>
+                        <ul key={scooter._id} className='cards__items'>
                             <CardItem
                                 id={scooter._id}
                                 src='images/scooter1.png'
