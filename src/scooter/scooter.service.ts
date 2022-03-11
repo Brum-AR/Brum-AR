@@ -22,7 +22,7 @@ export class ScooterService {
               private readonly tireService: TireService,
               private readonly accessoryService: AccessoryService) {}
 
-  async create(): Promise<Scooter> {
+  async create() {
 
     const scooter_characteristics = this.scooterCharacteristicService.create();
     const engine = this.engineService.create();
@@ -52,7 +52,11 @@ export class ScooterService {
     )
 
     //return createdScooter.save();
-      return createdScooter;
+     return {
+         "statusCode": 403,
+         "message": "You don't have the right to access this endpoint.",
+         "error": "Forbidden"
+     };
   }
 
   async findAll() {

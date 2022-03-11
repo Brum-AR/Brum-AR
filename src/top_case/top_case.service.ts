@@ -9,13 +9,17 @@ export class TopCaseService {
 
   constructor(@InjectModel(TopCase.name) private readonly topCaseModel: Model<TopCaseDocument>) {}
 
-  async create() : Promise<TopCase> {
+  async create() {
     const createdTopCase = new this.topCaseModel({
       description: "Un Top Case pour le scooter.",
       price: 64.90,
       created_at: new Date()
     })
-    return createdTopCase.save();
+    return {
+      "statusCode": 403,
+      "message": "You don't have the right to access this endpoint.",
+      "error": "Forbidden"
+    };
   }
 
   async findAll() {

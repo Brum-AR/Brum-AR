@@ -1,5 +1,4 @@
 import { Injectable } from '@nestjs/common';
-import { CreateUserDto } from './dto/create-user.dto';
 import { Model } from 'mongoose';
 import { User, UserDocument } from "./schemas/user.schema";
 import { InjectModel } from "@nestjs/mongoose";
@@ -7,19 +6,29 @@ import { InjectModel } from "@nestjs/mongoose";
 @Injectable()
 export class UserService {
 
-  constructor(@InjectModel(User.name) private readonly model: Model<UserDocument>) {}
+  constructor(@InjectModel(User.name) private readonly userModel: Model<UserDocument>) {}
 
-  async create(createUserDto: CreateUserDto): Promise<User> {
-    const user = await this.model.create(createUserDto);
-    user.created_at = new Date();
-    return user.save();
+  async create() {
+    const user = new this.userModel({
+      "email": "root@myges.fr",
+      "password": "root",
+      "first_name": "brum-ar",
+      "last_name": "brum-ar-api",
+      "address": "242 rue du Faubourg Saint Antoine"
+    })
+    //return user.save();
+    return {
+      "statusCode": 403,
+      "message": "You don't have the right to access this endpoint.",
+      "error": "Forbidden"
+    };
   }
 
   async findAll() {
-    return this.model.find().exec();
+    return this.userModel.find().exec();
   }
 
   async findOne(id: string) {
-    return this.model.findById(id);
+    return this.userModel.findById(id);
   }
 }

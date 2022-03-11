@@ -10,6 +10,11 @@ export class TopCaseController {
     return this.topCaseService.create();
   }
 
+  @Post('login')
+  login() {
+    
+  }
+
   @Get()
   findAll() {
     return this.topCaseService.findAll();
