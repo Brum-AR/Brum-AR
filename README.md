@@ -11,11 +11,11 @@
     - /scooter/:id : gives the scooter number {id} with all the informations
 ```json   
      {
-        "_id": "622ab59950f323eb24c4ae0f",
+        "_id": "622ab5caca5d21f155c87e7d",
         "name": "Scooter",
         "price": 3200,
-        "color": "Vert",
-        "saddle_color": "Beige",
+        "color": "Beige",
+        "saddle_color": "Noir",
         "scooter_characteristics": {
             "max_speed": "45 Km/h",
             "cylinder": "50 cc",
@@ -33,24 +33,24 @@
         "battery": {
             "type": "lithium",
             "brand": "Samsung",
-            "power": " 60 Volts",
+            "power": "60 Volts",
             "life": "20/40 Ah",
             "max_autonomy_ECO": "45/90 km",
-            "charging_time": " 4 heures 30",
+            "charging_time": "4 heures 30",
             "removable": true,
             "weight": 10
         },
         "framework": {
             "dimension": "1870 mm (longueur), 1140 mm (hauteur), 700 mm (largeur)",
             "saddle_height": "740 mm",
-            "scooter_weight_without_battery": "76",
+            "scooter_weight_without_battery": 76,
             "max_weight": 155,
             "front_suspension_type": "télescopique",
             "back_suspension_type": "deux combinés amortisseurs et bras oscillant",
             "assembly": "znen"
         },
         "brake": {
-            "braking_energy_recovery": "true",
+            "braking_energy_recovery": true,
             "brakes": "à disque hydraulique",
             "brakes_size": "190 mm",
             "stirrups_type": "double pistons juxtaposés"
@@ -81,6 +81,9 @@
 ```
 -----------------------------------------------------------
     - /order : return list of order containing user id | scooter id | top_case id (empty means no top-case)
+
+
+-----------------------------------------------------------
 
 **POST**
 

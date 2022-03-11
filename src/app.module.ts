@@ -15,6 +15,7 @@ import { BrakeModule } from './brake/brake.module';
 import { TireModule } from './tire/tire.module';
 import { AccessoryModule } from './accessory/accessory.module';
 import { ScooterCharacteristicModule } from './scooter-characteristic/scooter-characteristic.module';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [MongooseModule.forRoot("mongodb+srv://root:root@cluster0.kpikx.mongodb.net/brumar?retryWrites=true&w=majority"),
@@ -28,7 +29,8 @@ import { ScooterCharacteristicModule } from './scooter-characteristic/scooter-ch
     BrakeModule,
     TireModule,
     AccessoryModule,
-    ScooterCharacteristicModule],
+    ScooterCharacteristicModule,
+    AuthModule],
   controllers: [AppController],
   providers: [AppService],
 })

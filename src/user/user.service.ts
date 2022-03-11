@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import {HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { Model } from 'mongoose';
 import { User, UserDocument } from "./schemas/user.schema";
 import { InjectModel } from "@nestjs/mongoose";
@@ -22,6 +22,22 @@ export class UserService {
       "message": "You don't have the right to access this endpoint.",
       "error": "Forbidden"
     };
+  }
+
+  async findByLogin(email: string, password: string) {
+    const user = await this.userModel.findOne({ email: email });
+
+    if (!user) {
+      throw new HttpException('User not found', HttpStatus.UNAUTHORIZED);
+    }
+
+    const areEqual = user.password === password;
+
+    if (!areEqual) {
+      throw new HttpException('Invalid credentials', HttpStatus.UNAUTHORIZED);
+    }
+
+    return user;
   }
 
   async findAll() {
