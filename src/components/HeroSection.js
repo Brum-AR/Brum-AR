@@ -19,11 +19,12 @@ function HeroSection() {
           buttonSize='btn--large'
           onClick={console.log('hey')}
         >
-          <OpenApp
-              ios="ARProject://"
-          >
-              Essayez AR <i className='far fa-play-circle' />
-          </OpenApp>
+            <a href='ARProject://'>Essayez AR <i className='far fa-play-circle' /></a>
+          {/*<OpenApp*/}
+          {/*    ios="ARProject://"*/}
+          {/*>*/}
+          {/*    Essayez AR <i className='far fa-play-circle' />*/}
+          {/*</OpenApp>*/}
         </Button>
       </div>
     </div>
