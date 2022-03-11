@@ -25,6 +25,17 @@ h1 {
   margin: 55px 0 45px;
 }
 
+@media screen and (max-width: 400px) {
+  .cards__wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    /*left: 5%;*/
+
+    margin: 55px 0 45px;
+  }
+}
+
 .cards__items {
   margin-bottom: 24px;
 }

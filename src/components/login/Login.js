@@ -31,9 +31,9 @@ const Login = (props) => {
         <>
             <div className='login'>
                 <div className='login__form'>
-                    <input ref={emailInput} className='form__text' onChange={e => setEmail(e.target.value)} type={"text"} placeholder={"email"}/>
-                    <input ref={passwordInput} className='form__text' onChange={e => setPassword(e.target.value)} type={"password"} placeholder={"mot de passe"}/>
-                    <input className='form__submit' onClick={() => connect()} type={"submit"} placeholder={"login"}/>
+                    <input ref={emailInput} className='form__text' onChange={e => setEmail(e.target.value)} type={"text"} placeholder={"username"}/>
+                    <input ref={passwordInput} className='form__text' onChange={e => setPassword(e.target.value)} type={"password"} placeholder={"password"}/>
+                    <input className='form__submit btn--darkoutline' onClick={() => connect()} type={"submit"} placeholder={"login"}/>
                 </div>
             </div>
         </>
