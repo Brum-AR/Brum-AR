@@ -1,6 +1,5 @@
 import { Injectable } from '@nestjs/common';
 import { CreateOrderDto } from './dto/create-order.dto';
-import { UpdateOrderDto } from './dto/update-order.dto';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { Order, OrderDocument } from './schemas/order.schemas';
@@ -14,7 +13,14 @@ export class OrderService {
     ) {}
 
   async  create(createOrderDto: CreateOrderDto): Promise<Order> {
-    const createdOrder = new this.orderModel(createOrderDto);
+
+    const createdOrder = new this.orderModel({
+      user: createOrderDto.user,
+      scooter: createOrderDto.scooter,
+      top_case: createOrderDto.top_case,
+      created_at: new Date(),
+
+    });
     createdOrder.created_at= new Date(Date.now());
     return createdOrder.save();
   }

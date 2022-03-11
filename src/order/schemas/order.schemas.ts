@@ -10,14 +10,14 @@ export type OrderDocument = Order & Document;
 @Schema()
 export class Order {
 
-  @Prop({ type: mongoose.Schema.Types.ObjectId, ref: 'User' })
-  user : User;
+  @Prop()
+  user : string;
 
-  @Prop({ type: mongoose.Schema.Types.ObjectId, ref: 'Scooter' })
-  scooter : Scooter;
+  @Prop()
+  scooter : string;
 
-  @Prop({ type: mongoose.Schema.Types.ObjectId, ref: 'TopCase' })
-  top_case : TopCase;
+  @Prop()
+  top_case : string;
 
   @Prop()
   created_at: Date;

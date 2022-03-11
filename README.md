@@ -70,8 +70,8 @@
     }
 ```
 -----------------------------------------------------------
-    -/top-case : gives a list of top-case 
-    -/top-case/:id : gives the top-case number {id}
+    - /top-case : gives a list of top-case 
+    - /top-case/:id : gives the top-case number {id}
 ```json
     {
         "_id": "622ac52300b4dbad9121dba2",
@@ -79,16 +79,28 @@
         "description": "Un Top Case pour le scooter."
     }
 ```
+-----------------------------------------------------------
+    - /order : return list of order containing user id | scooter id | top_case id (empty means no top-case)
 
 **POST**
 
-    -/login : if user exist, returns
+    - /login : if user exist, returns
 ```json
-    { 
-        "user_id": "765R6fze23",
-        "email": "root@myges.fr",
-        "first_name": "brum-ar",
-        "last_name": "brum-ar-api",
-        "address": "242 rue du Faubourg Saint Antoine",
+    {
+      "_id": "622acb7b892b2eded00a736c",
+      "address": "242 rue du Faubourg Saint Antoine",
+      "last_name": "brum-ar-api",
+      "first_name": "brum-ar",
+      "password": "....",
+      "email": "root@myges.fr"
     }
+```
+-----------------------------------------------------------
+    - /order : create an order with user id | scooter id | top_case id (can be empty)
+```json
+      {
+          "user": "622acb7b892b2eded00a736c",
+          "scooter":"622ab59950f323eb24c4ae0f",
+          "top_case":"622ac52300b4dbad9121dba2"
+      }
 ```
