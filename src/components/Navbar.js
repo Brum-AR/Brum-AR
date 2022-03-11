@@ -37,25 +37,16 @@ function Navbar() {
           <ul className={click ? "nav-menu active" : "nav-menu"}>
             <li className="nav-item">
               <Link to="/" className="nav-links" onClick={closeMobileMenu}>
-                Home
+                Accueil
               </Link>
             </li>
-            {/* <li className='nav-item'>
-              <Link
-                to='/services'
-                className='nav-links'
-                onClick={closeMobileMenu}
-              >
-                Services
-              </Link>
-            </li> */}
             <li className="nav-item">
               <Link
                 to="/products"
                 className="nav-links"
                 onClick={closeMobileMenu}
               >
-                Our Models
+                Nos modèles
               </Link>
             </li>
 
@@ -65,12 +56,12 @@ function Navbar() {
                 className="nav-links-mobile"
                 onClick={closeMobileMenu}
               >
-                Sign Up
+                S'enregistrer
               </Link>
             </li>
           </ul>
           {/*{button && <Link to="/cart" className='btn--darkoutline'>Cart</Link>}*/}
-          {button && <Link to="/login" className='btn--darkoutline'>Login</Link>}
+          {button && <Link to="/login" className='btn--darkoutline'>S'identider</Link>}
         </div>
       </nav>
     </>
