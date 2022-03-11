@@ -9,7 +9,7 @@ export class AccessoryService {
   constructor(@InjectModel(Accessory.name) private accessoryModel: Model<AccessoryDocument>) {}
 
   create() {
-    return new this.accessoryModel(
+    const createdAccessory = new this.accessoryModel(
       {
         alarm_and_geotracking: "en option",
         top_case: "en option",
@@ -20,6 +20,8 @@ export class AccessoryService {
         created_at: new Date(),
       }
     )
+      createdAccessory.save();
+      return createdAccessory;
   }
 
   findAll() {

@@ -9,7 +9,7 @@ export class EngineService {
   constructor(@InjectModel(Engine.name) private engineModel: Model<EngineDocument>) {}
 
   create() {
-    return new this.engineModel(
+    const createdEngine = new this.engineModel(
         {
           type: "Bosch Brushless",
           position: "moyeu de roue arrière",
@@ -17,13 +17,15 @@ export class EngineService {
           created_at: new Date(),
         }
     )
+    createdEngine.save();
+    return createdEngine;
   }
 
   findAll() {
     return this.engineModel.find().exec();
   }
 
-  findOne(id: number) {
+  findOne(id: string) {
     return this.engineModel.findById(id);
   }
 }

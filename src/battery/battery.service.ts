@@ -9,7 +9,7 @@ export class BatteryService {
   constructor(@InjectModel(Battery.name) private batteryModel: Model<BatteryDocument>) {}
 
   create() {
-    return new this.batteryModel(
+    const createdBattery = new this.batteryModel(
         {
           type: "lithium",
           brand: "Samsung",
@@ -22,13 +22,15 @@ export class BatteryService {
           created_at: new Date(),
         }
     )
+      createdBattery.save();
+      return createdBattery;
   }
 
   findAll() {
     return this.batteryModel.find().exec();
   }
 
-  findOne(id: number) {
+  findOne(id: string) {
     return this.batteryModel.findById(id);
   }
 }

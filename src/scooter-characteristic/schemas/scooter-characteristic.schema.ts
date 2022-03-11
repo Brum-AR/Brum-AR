@@ -18,6 +18,9 @@ export class ScooterCharacteristic {
     reverse_gear: boolean;
 
     @Prop()
+    control_screen: string;
+
+    @Prop()
     anti_theft_security: string;
 
     @Prop()

@@ -9,7 +9,7 @@ export class ScooterCharacteristicService {
   constructor(@InjectModel(ScooterCharacteristic.name) private scooterCharacteristicModel: Model<ScooterCharacteristicDocument>) {}
 
   create() {
-    return new this.scooterCharacteristicModel(
+    const createdScooterCharacteristic = new this.scooterCharacteristicModel(
         {
           max_speed: "45 Km/h",
           cylinder: "50 cc",
@@ -21,13 +21,15 @@ export class ScooterCharacteristicService {
           created_at: new Date(),
         }
     )
+      createdScooterCharacteristic.save();
+      return createdScooterCharacteristic;
   }
 
   findAll() {
     return this.scooterCharacteristicModel.find().exec();
   }
 
-  findOne(id: number) {
+  findOne(id: string) {
     return this.scooterCharacteristicModel.findById(id);
   }
 }

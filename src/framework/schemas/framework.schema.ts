@@ -10,7 +10,22 @@ export class Framework {
     dimension : string;
 
     @Prop()
-    saddle_height : number;
+    saddle_height : string;
+
+    @Prop()
+    scooter_weight_without_battery : string;
+
+    @Prop()
+    max_weight : number;
+
+    @Prop()
+    front_suspension_type : string;
+
+    @Prop()
+    back_suspension_type : string;
+
+    @Prop()
+    assembly : string;
 
     @Prop()
     created_at: Date;

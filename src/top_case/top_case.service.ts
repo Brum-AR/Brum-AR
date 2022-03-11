@@ -7,19 +7,23 @@ import { Model } from "mongoose";
 @Injectable()
 export class TopCaseService {
 
-  constructor(@InjectModel(TopCase.name) private readonly model: Model<TopCaseDocument>) {}
+  constructor(@InjectModel(TopCase.name) private readonly topCaseModel: Model<TopCaseDocument>) {}
 
   async create() : Promise<TopCase> {
-    //TODO
-    return;
+    const createdTopCase = new this.topCaseModel({
+      description: "Un Top Case pour le scooter.",
+      price: 64.90,
+      created_at: new Date()
+    })
+    return createdTopCase.save();
   }
 
   async findAll() {
-    return this.model.find().exec();
+    return this.topCaseModel.find().exec();
   }
 
   findOne(id: string) {
-    return this.model.findById(id);
+    return this.topCaseModel.findById(id);
   }
 
 }

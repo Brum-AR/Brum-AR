@@ -51,14 +51,88 @@ export class ScooterService {
       }
     )
 
-    return createdScooter.save();
+    //return createdScooter.save();
+      return createdScooter;
   }
 
   async findAll() {
     return this.scooterModel.find().select('_id name color saddle_color price').exec();
   }
 
-  findOne(id: string) {
-    return this.scooterModel.findById(id);
+  async findOne(id: string) {
+      const retrievedScooter = await this.scooterModel.findById(id);
+      const retrievedScooterCharacteristic = await this.scooterCharacteristicService.findOne("622ab5cf75a8d9a87b52465b");
+      const retrievedEngine = await this.engineService.findOne("622ab5cf75a8d9a87b52465c");
+      const retrievedBattery = await this.batteryService.findOne("622ab5cf75a8d9a87b52465d");
+      const retrievedFramework = await this.frameworkService.findOne("622ab5cf75a8d9a87b52465e");
+      const retrievedBrake = await this.brakeService.findOne("622ab5cf75a8d9a87b52465f");
+      const retrievedTire = await this.tireService.findOne("622ab5cf75a8d9a87b524660");
+      const retrievedAccessory = await this.accessoryService.findOne("622ab5cf75a8d9a87b524661");
+
+        return {
+            "_id": id,
+            "name": retrievedScooter.name,
+            "price": retrievedScooter.price,
+            "color": retrievedScooter.color,
+            "saddle_color": retrievedScooter.saddle_color,
+            "scooter_characteristics":
+                {
+                    "max_speed": retrievedScooterCharacteristic.max_speed ,
+                    "cylinder": retrievedScooterCharacteristic.cylinder,
+                    "license": retrievedScooterCharacteristic.license,
+                    "reverse_gear": retrievedScooterCharacteristic.reverse_gear,
+                    "control_screen": retrievedScooterCharacteristic.control_screen,
+                    "anti_theft_security": retrievedScooterCharacteristic.anti_theft_security,
+                    "crutch": retrievedScooterCharacteristic.crutch
+                },
+            "engine":
+                {
+                    "type": retrievedEngine.type,
+                    "position": retrievedEngine.position,
+                    "power": retrievedEngine.power
+                },
+            "battery":
+                {
+                    "type": retrievedBattery.type,
+                    "brand": retrievedBattery.brand,
+                    "power": retrievedBattery.power,
+                    "life": retrievedBattery.life,
+                    "max_autonomy_ECO": retrievedBattery.max_autonomy_ECO,
+                    "charging_time": retrievedBattery.charging_time,
+                    "removable": retrievedBattery.removable,
+                    "weight": retrievedBattery.weight
+                },
+            "framework":
+                {
+                    "dimension": retrievedFramework.dimension,
+                    "saddle_height": retrievedFramework.saddle_height,
+                    "scooter_weight_without_battery": retrievedFramework.scooter_weight_without_battery,
+                    "max_weight": retrievedFramework.max_weight,
+                    "front_suspension_type": retrievedFramework.front_suspension_type,
+                    "back_suspension_type": retrievedFramework.back_suspension_type,
+                    "assembly": retrievedFramework.assembly
+                },
+            "brake":
+                {
+                    "braking_energy_recovery": retrievedBrake.braking_energy_recovery,
+                    "brakes": retrievedBrake.brakes,
+                    "brakes_size": retrievedBrake.brakes_size,
+                    "stirrups_type": retrievedBrake.stirrups_type
+                },
+            "tire":
+                {
+                    "type": retrievedTire.type,
+                    "size": retrievedTire.size
+                },
+            "accessory":
+                {
+                    "alarm_and_geotracking": retrievedAccessory.alarm_and_geotracking,
+                    "top_case": retrievedAccessory.top_case,
+                    "windshield": retrievedAccessory.windshield,
+                    "portable_key": retrievedAccessory.portable_key,
+                    "usb_port": retrievedAccessory.usb_port,
+                    "eco_mode": retrievedAccessory.eco_mode
+                }
+        }
   }
 }

@@ -10,7 +10,7 @@ export class FrameworkService {
   constructor(@InjectModel(Framework.name) private frameworkModel: Model<FrameworkDocument>) {}
 
   create() {
-    return new this.frameworkModel(
+    const createdFramework = new this.frameworkModel(
         {
           dimension: "1870 mm (longueur), 1140 mm (hauteur), 700 mm (largeur)",
           saddle_height: "740 mm",
@@ -22,13 +22,15 @@ export class FrameworkService {
           created_at: new Date(),
         }
     )
+      createdFramework.save();
+      return createdFramework;
   }
 
   findAll() {
     return this.frameworkModel.find().exec();
   }
 
-  findOne(id: number) {
+  findOne(id: string) {
     return this.frameworkModel.findById(id);
   }
 }

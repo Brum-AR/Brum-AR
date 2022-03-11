@@ -9,20 +9,22 @@ export class TireService {
   constructor(@InjectModel(Tire.name) private tireModel: Model<TireDocument>) {}
 
   create() {
-    return new this.tireModel(
+    const createdTire = new this.tireModel(
         {
           type: "route",
           size: "110-70-12",
           created_at: new Date(),
         }
     )
+      createdTire.save();
+      return createdTire;
   }
 
   findAll() {
     return this.tireModel.find().exec();
   }
 
-  findOne(id: number) {
+  findOne(id: string) {
     return this.tireModel.findById(id);
   }
 }

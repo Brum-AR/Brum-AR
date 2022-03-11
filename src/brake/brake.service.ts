@@ -9,7 +9,7 @@ export class BrakeService {
   constructor(@InjectModel(Brake.name) private brakeModel: Model<BrakeDocument>) {}
 
   create() {
-    return new this.brakeModel(
+    const createdBrake = new this.brakeModel(
         {
           braking_energy_recovery: true,
           brakes: "à disque hydraulique",
@@ -18,13 +18,15 @@ export class BrakeService {
           created_at: new Date(),
         }
     )
+      createdBrake.save();
+      return createdBrake;
   }
 
   findAll() {
     return this.brakeModel.find().exec();
   }
 
-  findOne(id: number) {
+  findOne(id: string) {
     return this.brakeModel.findById(id);
   }
 }
