@@ -10,6 +10,7 @@ import SignUp from './components/pages/SignUp';
 import ScooterDetails from './components/ScooterDetails';
 import Login from './components/login/Login'
 import Cart from "./components/cart/Cart";
+import Success from "./components/success/Success";
 
 function App() {
     return (
@@ -25,6 +26,7 @@ function App() {
                     <Route path='/details/:id' component={ScooterDetails}/>
                     <Route path='/login' component={Login}/>
                     <Route path='/cart' component={Cart}/>
+                    <Route path='/success' component={Success}/>
                 </Switch>
             </Router>
         </>
